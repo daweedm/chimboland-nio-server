@@ -141,7 +141,7 @@ public class ChimbolandNIO
             }
             catch(NumberFormatException e)
             {
-                throw new NumberFormatException("Le port indiqué dans le fichier de configuration est invalide.");
+                throw new NumberFormatException("Le port indique dans le fichier de configuration est invalide.");
             }
             
             domain = ccfc.getStringContentOfFirst("domain-permitted");
@@ -153,7 +153,7 @@ public class ChimbolandNIO
             }
             catch(NumberFormatException e)
             {
-                throw new NumberFormatException("Le port indiqué dans le fichier de configuration est invalide.");
+                throw new NumberFormatException("Le port indique dans le fichier de configuration est invalide.");
             }
             catch(MissingInformationException e)
             {
@@ -180,7 +180,7 @@ public class ChimbolandNIO
         }
         catch (IllegalAccessException ex)
         {
-            System.out.println("Impossible d'accéder au driver MySQL");
+            System.out.println("Impossible d'acceder au driver MySQL");
             System.exit(-1);
         }
        	catch (ParserConfigurationException e)
@@ -287,7 +287,7 @@ public class ChimbolandNIO
                                     if(thisWorkingClient.getSocketChannel().equals(TemporaryKey.channel()))
                                     {
                                         XMLSplit = getMessageFromSocketChannel(buffer).split("[\u0000]"); // ici
-                                        for(String XMLtoExec : XMLSplit) // On execute toutes les requ√™tes, m√™me collees.
+                                        for(String XMLtoExec : XMLSplit) // On execute toutes les requêtes, même collees.
                                         {
                                             //System.out.println(XMLtoExec);
                                             XML = XMLreader.parseWithNumbersAtEnd(XMLtoExec);
