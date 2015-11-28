@@ -35,4 +35,4 @@ Performance-oriented non-blocking TCP NIO server designed for chimboland.org's t
 3. Wedding
 4. All teleporters are active
 5. CTF, Lapino's Race
-6. surely forgotten the rest
+6. etc
