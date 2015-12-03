@@ -72,7 +72,7 @@ public class WeddingThread implements Runnable {
                         }
                     }
                     Thread.sleep(4000);
-                    this.Wedfai(); //Pas de double Wedfai !
+                    this.Wedfai(); // Pas de double Wedfai !
                     
                 } else if (_Serveur.Clients.get(mari).partenaire_name.length() > 3) {
                     _Serveur.setWeddingState(true);
@@ -85,7 +85,7 @@ public class WeddingThread implements Runnable {
                         }
                     }
                     Thread.sleep(4000);
-                    this.Wedfai(); //Pas de double Wedfai !
+                    this.Wedfai(); // Pas de double Wedfai !
                 } else if (_Serveur.Clients.get(femme).partenaire_name.length() > 3) {
                     _Serveur.setWeddingState(true);
                     
@@ -96,7 +96,7 @@ public class WeddingThread implements Runnable {
                         }
                     }
                     Thread.sleep(4000);
-                    this.Wedfai(); //Pas de double Wedfai !
+                    this.Wedfai(); // Pas de double Wedfai !
                     
                 } else {
                     if (continued) {

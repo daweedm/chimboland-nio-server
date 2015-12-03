@@ -9,7 +9,7 @@ package org.chimboland.tchat;
  * - Changer la methode de stockage des clients (Integer actuellement)
  * - Optimisation future : Avant d'envoyer les donnees, initialiser les selecteurs avec SelectionKey.OP_WRITE ?
  * - Retrait du NullPointerException ! Erreurs possibles.
- * - Mettre à jour vers java (7) NIO.2 + SAX2
+ * - Mettre √† jour vers java (7) NIO.2 + SAX2
  */
 
 // Chimboland package : Parser & Logs manager
@@ -168,7 +168,7 @@ public class ChimbolandNIO
             
             sauveurSQL = new ImportantSQLQueriesSafer(this); // Loading Mysql rescue
             System.out.println("Le sauvetage des req. SQL importantes est operationnel.");
-            // Mise à jour des connectes (membres et visiteurs) à 0
+            // Mise √† jour des connectes (membres et visiteurs) √† 0
             this.Mysql_Query("UPDATE phpbb_users SET online = 0;");
             this.Mysql_Query("UPDATE visitor_tchat SET online = 0;");
             
@@ -238,7 +238,7 @@ public class ChimbolandNIO
         {
             try
             {
-                // On attend un evènement
+                // On attend un ev√®nement
                 SelectorChannelSock.select();
                 // Obtention des cles
                 SelectionKeysSet = SelectorChannelSock.selectedKeys();
@@ -287,7 +287,7 @@ public class ChimbolandNIO
                                     if(thisWorkingClient.getSocketChannel().equals(TemporaryKey.channel()))
                                     {
                                         XMLSplit = getMessageFromSocketChannel(buffer).split("[\u0000]"); // ici
-                                        for(String XMLtoExec : XMLSplit) // On execute toutes les requ�tes, m�me collees.
+                                        for(String XMLtoExec : XMLSplit) // On execute toutes les requêtes, même collees.
                                         {
                                             //System.out.println(XMLtoExec);
                                             XML = XMLreader.parseWithNumbersAtEnd(XMLtoExec);
@@ -382,7 +382,7 @@ public class ChimbolandNIO
         {
             if(this.weddingThread.isAlive())
             {
-                throw new WeddingException("Un mariage � la fois est autoris�.");
+                throw new WeddingException("Un mariage à la fois est autorisé.");
             }
             else
             {

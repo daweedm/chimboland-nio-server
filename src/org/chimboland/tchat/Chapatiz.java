@@ -247,7 +247,7 @@ public class Chapatiz extends NIOChimbozClient
                         if(changeClothes == true)
                         {
                             this.setChangeClothes(false);
-                            this.send("<alert t='Changement correctement effecutŽ.'/>", true);
+                            this.send("<alert t='Changement correctement effecutÃ©.'/>", true);
                             _Serveur.addTaskLog("<profilChange ip='" + this.ip + "' id='" + this.id + "' time='" + _Serveur.getCalendarTime().getTimeInMillis() + "'/>");
                             
                         }
@@ -318,7 +318,7 @@ public class Chapatiz extends NIOChimbozClient
                     msg.append("</user>");
                     this.send(msg.toString(), true);
                     msg = null;
-                    this.send("<alert t='Bienvenue cher visiteur sur Chimboland, pour profiter ˆ fond de Chimboland, inscris toi ;)'/>", true);
+                    this.send("<alert t='Bienvenue cher visiteur sur Chimboland, pour profiter Ã  fond de Chimboland, inscris toi ;)'/>", true);
                     _Serveur.addTaskLog("<connexion ip='" + this.ip + "' id='" + this.id + "' time='" + _Serveur.getCalendarTime().getTimeInMillis() + "'/>");
                 }
                 else

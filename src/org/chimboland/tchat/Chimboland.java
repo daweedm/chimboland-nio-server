@@ -4,7 +4,7 @@ package org.chimboland.tchat;
  * chimboland.org
  *
  */
-public class Chimboland 
+public class Chimboland
 {
     public static void main(String args[])
     {

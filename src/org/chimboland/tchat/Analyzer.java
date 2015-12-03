@@ -308,7 +308,7 @@ public class Analyzer implements Runnable
                         ClientsTask.x = value;
                         ClientsTask.y = value2;
                         ClientsTask.setRoom(ClientsTask.map);
-                        ClientsTask.setMap(""); // Indétermination de l'utilité bénéfique !
+                        ClientsTask.setMap(""); // Ind√©termination de l'utilit√© b√©n√©fique !
                         if(ClientsTask.room.equals("blueforest.race"))
                         {
                             readySend.append("<roomps id='" + ClientsTask.room + "' ><s f='0P7,' />");
@@ -440,7 +440,7 @@ public class Analyzer implements Runnable
                                         client.send("<addusr n='Lapin" + ClientsTask.id + "03' mid='l3' i='botlapin" + ClientsTask.id + "3' ad='l;1;1;1;1;1;1' x='199' y='427' at='0' status='' fol='0P7,' />", true);
                                         client.send("<addusr n='Lapin" + ClientsTask.id + "04' mid='l4' i='botlapin" + ClientsTask.id + "4' ad='l;1;1;1;1;1;1' x='86' y='335' at='0' status='' fol='0P7,' />", true);
                                         client.send("<addusr n='Lapin" + ClientsTask.id + "05' mid='l5' i='botlapin" + ClientsTask.id + "5' ad='l;1;1;1;1;1;1' x='296' y='333' at='0' status='' fol='0P7,' />", true);
-                                        client.send("<c i='botlapin" + ClientsTask.id + "5' ms='72e25f077a87e4c0a38cd10fd39cbd3a,3ea80ac42e7d872b71c27388fb4c279f' t='Un créateur arrive sur Chimboland.net !'/>", true);
+                                        client.send("<c i='botlapin" + ClientsTask.id + "5' ms='72e25f077a87e4c0a38cd10fd39cbd3a,3ea80ac42e7d872b71c27388fb4c279f' t='Un cr√©ateur arrive sur Chimboland.net !'/>", true);
                                         
                                     }
                                 }
@@ -521,7 +521,7 @@ public class Analyzer implements Runnable
                 }
                 else
                 {
-                    ClientsTask.send("<alert t='Un sondage est déjà en cours. Veuillez l%27arrêter avant d%27en relancer un nouveau.'/>", true);
+                    ClientsTask.send("<alert t='Un sondage est d√©j√† en cours. Veuillez l%27arr√™ter avant d%27en relancer un nouveau.'/>", true);
                 }
             }
             else if(XML.getNodeName().equals("stopvote") && ClientsTask.init && (ClientsTask.rang == 1 || ClientsTask.rang == 6))
@@ -623,8 +623,8 @@ public class Analyzer implements Runnable
                                 client = Joueur.getValue();
                                 if(client.init && client.pseudo.equalsIgnoreCase(cible))
                                 {
-                                    client.send("<grprem n='Tu as reçu 25P. de la part de " + ClientsTask.pseudo + "'/>", true);
-                                    ClientsTask.send("<grprem n='Tu as fait don de 25P. à " + client.pseudo + "'/>", true);
+                                    client.send("<grprem n='Tu as re√ßu 25P. de la part de " + ClientsTask.pseudo + "'/>", true);
+                                    ClientsTask.send("<grprem n='Tu as fait don de 25P. √† " + client.pseudo + "'/>", true);
                                     
                                     this._Serveur.Mysql_Query("UPDATE phpbb_users SET money = money + 25 WHERE user_id = '" + client.id + "'");
                                     this._Serveur.Mysql_Query("INSERT INTO histo_don_chat (time, iddon, idreceiv, nombre) VALUES ('" + _Serveur.getCalendarTime().getTimeInMillis() / 1000 + "', '" + ClientsTask.id + "', '" + client.id + "', '25')");
@@ -639,8 +639,8 @@ public class Analyzer implements Runnable
                                 client = Joueur.getValue();
                                 if(client.init && client.pseudo.equalsIgnoreCase(cible))
                                 {
-                                    client.send("<grprem n='Tu as reçu 100P. de la part de " + ClientsTask.pseudo + "'/>", true);
-                                    ClientsTask.send("<grprem n='Tu as fait don de 100P. à " + client.pseudo + "'/>", true);
+                                    client.send("<grprem n='Tu as re√ßu 100P. de la part de " + ClientsTask.pseudo + "'/>", true);
+                                    ClientsTask.send("<grprem n='Tu as fait don de 100P. √† " + client.pseudo + "'/>", true);
                                     this._Serveur.Mysql_Query("UPDATE phpbb_users SET money = money + 100 WHERE user_id = '" + client.id + "'");
                                     this._Serveur.Mysql_Query("INSERT INTO histo_don_chat (time, iddon, idreceiv, nombre) VALUES ('" + _Serveur.getCalendarTime().getTimeInMillis() / 1000 + "', '" + ClientsTask.id + "', '" + client.id + "', '100')");
                                     break;
@@ -733,7 +733,7 @@ public class Analyzer implements Runnable
                                     else
                                     {
                                         ++ClientsTask.hypmoodfai;
-                                        ClientsTask.send("<alert t='Du calme sur les Hypermoods ! (" + ClientsTask.hypmoodfai + ((ClientsTask.hypmoodfai == 1) ? "ère" : "ème") + " fois)'/>", true);
+                                        ClientsTask.send("<alert t='Du calme sur les Hypermoods ! (" + ClientsTask.hypmoodfai + ((ClientsTask.hypmoodfai == 1) ? "√®re" : "√®me") + " fois)'/>", true);
                                     }
                                     
                                 }
@@ -807,7 +807,7 @@ public class Analyzer implements Runnable
                                     else
                                     {
                                         ++ClientsTask.hypmoodfai;
-                                        ClientsTask.send("<alert t='Du calme sur les Hypermoods ! (" + ClientsTask.hypmoodfai + ((ClientsTask.hypmoodfai == 1) ? "ère" : "ème") + " fois)'/>", true);
+                                        ClientsTask.send("<alert t='Du calme sur les Hypermoods ! (" + ClientsTask.hypmoodfai + ((ClientsTask.hypmoodfai == 1) ? "√®re" : "√®me") + " fois)'/>", true);
                                     }
                                     
                                 }
@@ -822,7 +822,7 @@ public class Analyzer implements Runnable
                                 client = Joueur.getValue();
                                 if(client.init && client.room.equals(ClientsTask.room) && client.pseudo.equalsIgnoreCase(cible))
                                 {
-                                    if(client.animal.split(";").length < 5) // Pour éviter une surcharge de mémoire ...
+                                    if(client.animal.split(";").length < 5) // Pour √©viter une surcharge de m√©moire ...
                                     {
                                         confirmation = true;
                                     }
@@ -871,7 +871,7 @@ public class Analyzer implements Runnable
                             }
                             else if(maxAnimal)
                             {
-                                ClientsTask.send("<alert t='" + cible + " a déjà atteint le maximum d%27animaux autorisé.'/>", true);
+                                ClientsTask.send("<alert t='" + cible + " a d√©j√† atteint le maximum d%27animaux autoris√©.'/>", true);
                             }
                             else
                             {
@@ -910,12 +910,12 @@ public class Analyzer implements Runnable
                                 }
                                 else
                                 {
-                                    ClientsTask.send("<alert t='Pour lancer Lapino%27s Race, l%27initialisation du jeu est nécessaire !'/>", true);
+                                    ClientsTask.send("<alert t='Pour lancer Lapino%27s Race, l%27initialisation du jeu est n√©cessaire !'/>", true);
                                 }
                             }
                             else
                             {
-                                ClientsTask.send("<alert t='Il faut se rendre dans la salle dédiée au lancement du LR avant de pouvoir effecuté cette action !'/>", true);
+                                ClientsTask.send("<alert t='Il faut se rendre dans la salle d√©di√©e au lancement du LR avant de pouvoir effecut√© cette action !'/>", true);
                             }
                         }
                         else if(cible.equals("!race") && (ClientsTask.rang == 1 || ClientsTask.rang == 6))
@@ -925,7 +925,7 @@ public class Analyzer implements Runnable
                                 client = Joueur.getValue();
                                 if(client.init)
                                 {
-                                    client.send("<alert t='Lapino%27s Race initialisé. Les participants doivent se rendre à \"Vers Bacteria Pros\". Veillez à désactivez votre !nopowers.'/>", true);
+                                    client.send("<alert t='Lapino%27s Race initialis√©. Les participants doivent se rendre √† \"Vers Bacteria Pros\". Veillez √† d√©sactivez votre !nopowers.'/>", true);
                                 }
                             }
                             _Serveur.setRace(true);
@@ -953,12 +953,12 @@ public class Analyzer implements Runnable
                                 }
                                 else
                                 {
-                                    ClientsTask.send("<alert t='Pour lancer Capture The Flag, l%27initialisation du jeu est nécessaire !'/>", true);
+                                    ClientsTask.send("<alert t='Pour lancer Capture The Flag, l%27initialisation du jeu est n√©cessaire !'/>", true);
                                 }
                             }
                             else
                             {
-                                ClientsTask.send("<alert t='Il faut se rendre dans la salle dédiée au lancement du CTF avant de pouvoir effecuté cette action !'/>", true);
+                                ClientsTask.send("<alert t='Il faut se rendre dans la salle d√©di√©e au lancement du CTF avant de pouvoir effecut√© cette action !'/>", true);
                                 
                                 
                             }
@@ -971,7 +971,7 @@ public class Analyzer implements Runnable
                                 client = Joueur.getValue();
                                 if(client.init)
                                 {
-                                    client.send("<alert t='Capture The Flag initialisé. Les participants doivent se rendre à \"Vers Bacteria Débutants\". Veillez à désactivez votre !nopowers.'/>", true);
+                                    client.send("<alert t='Capture The Flag initialis√©. Les participants doivent se rendre √† \"Vers Bacteria D√©butants\". Veillez √† d√©sactivez votre !nopowers.'/>", true);
                                 }
                             }
                             _Serveur.setFlag(true);
@@ -1022,7 +1022,7 @@ public class Analyzer implements Runnable
                     }
                     else
                     {
-                        ClientsTask.send("<grpadd n='Du calme sur les messages privé !'/>", true);
+                        ClientsTask.send("<grpadd n='Du calme sur les messages priv√© !'/>", true);
                     }
                     
                 }
@@ -1103,9 +1103,9 @@ public class Analyzer implements Runnable
                                     {
                                         if(!client.pseudo.equals(ClientsTask.pseudo) && client.getFlag())
                                         {
-                                            client.send("<grpadd n='" + ClientsTask.pseudo + " a volé ton drapeau.'/>", true);
+                                            client.send("<grpadd n='" + ClientsTask.pseudo + " a vol√© ton drapeau.'/>", true);
                                             client.setFlag(false);
-                                            ClientsTask.send("<grpadd n='Tu as volé le drapeau de " + client.pseudo + "'/>", true);
+                                            ClientsTask.send("<grpadd n='Tu as vol√© le drapeau de " + client.pseudo + "'/>", true);
                                             ClientsTask.setFlag(true);
                                         }
                                         
@@ -1153,9 +1153,9 @@ public class Analyzer implements Runnable
                                     {
                                         if(!client.pseudo.equals(ClientsTask.pseudo) && client.getFlag())
                                         {
-                                            client.send("<grpadd n='" + ClientsTask.pseudo + " a volé ton drapeau.'/>", true);
+                                            client.send("<grpadd n='" + ClientsTask.pseudo + " a vol√© ton drapeau.'/>", true);
                                             client.setFlag(false);
-                                            ClientsTask.send("<grpadd n='Tu as volé le drapeau de " + client.pseudo + "'/>", true);
+                                            ClientsTask.send("<grpadd n='Tu as vol√© le drapeau de " + client.pseudo + "'/>", true);
                                             ClientsTask.setFlag(true);
                                         }
                                         
@@ -1222,9 +1222,9 @@ public class Analyzer implements Runnable
                                         {
                                             if(!client.pseudo.equals(ClientsTask.pseudo) && client.getFlag())
                                             {
-                                                client.send("<grpadd n='" + ClientsTask.pseudo + " a volé ton drapeau.'/>", true);
+                                                client.send("<grpadd n='" + ClientsTask.pseudo + " a vol√© ton drapeau.'/>", true);
                                                 client.setFlag(false);
-                                                ClientsTask.send("<grpadd n='Tu as volé le drapeau de " + client.pseudo + "'/>", true);
+                                                ClientsTask.send("<grpadd n='Tu as vol√© le drapeau de " + client.pseudo + "'/>", true);
                                                 ClientsTask.setFlag(true);
                                             }
                                             
@@ -1417,12 +1417,12 @@ public class Analyzer implements Runnable
                                 {
                                     ClientsTask.send("<loggam r='chimbo_gate' u='chimbo_gate'/>", true);
                                     this._Serveur.Mysql_Query("UPDATE phpbb_users SET money = money + 5, pt_ctf = pt_ctf + 1, timectf = '" + (_Serveur.getCalendarTime().getTimeInMillis() - _Serveur.getTimeFlag()) + "' WHERE user_id = '" + ClientsTask.id + "'");
-                                    ClientsTask.send("<alert t='Bravo tu a rapporté le drapeau en " + timer + " secondes ! Tu as reçu 5 ppts et 1 point classement Capture the Flag !'/>", true);
+                                    ClientsTask.send("<alert t='Bravo tu a rapport√© le drapeau en " + timer + " secondes ! Tu as re√ßu 5 ppts et 1 point classement Capture the Flag !'/>", true);
                                 }
                                 else
                                 {
                                     client.send("<loggam r='chimbo_gate' u='chimbo_gate'/>", true);
-                                    client.send("<alert t='" + ClientsTask.pseudo + " a rapporté le drapeau en " + timer + " secondes ! Bravo !'/>", true);
+                                    client.send("<alert t='" + ClientsTask.pseudo + " a rapport√© le drapeau en " + timer + " secondes ! Bravo !'/>", true);
                                 }
                             }
                         }
@@ -1450,7 +1450,7 @@ public class Analyzer implements Runnable
                                     {
                                         ClientsTask.send("<loggam r='chimbo_gate' u='chimbo_gate'/>", true);
                                         this._Serveur.Mysql_Query("UPDATE phpbb_users SET money = money + 5, pt_lapinos = pt_lapinos + 1, timerace = '" + (_Serveur.getCalendarTime().getTimeInMillis() - _Serveur.getTimeRace()) + "' WHERE user_id = '" + ClientsTask.id + "'");
-                                        ClientsTask.send("<alert t='Bravo tu viens de terminer le parcours en " + timer + " secondes ! Tu as reçu 5 ppts et 1 point classement Lapino !.'/>", true);
+                                        ClientsTask.send("<alert t='Bravo tu viens de terminer le parcours en " + timer + " secondes ! Tu as re√ßu 5 ppts et 1 point classement Lapino !.'/>", true);
                                     }
                                     else
                                     {
@@ -2253,7 +2253,7 @@ public class Analyzer implements Runnable
                         ClientsTask.bacscore = "" + (Integer.parseInt(ClientsTask.bacscore) + Integer.parseInt(XML.getAttribute("w")));
                         ClientsTask.bacwn = "" + (Integer.parseInt(ClientsTask.bacwn) + 1);
                         
-                        ClientsTask.send("<inforequest score='" + ClientsTask.bacscore + "' rank='" + (ClientsTask.bacrk + ((ClientsTask.bacrk.equals("1")) ? "er" : "ème")) + "' progression='" + XML.getAttribute("w") + "' played='" + ClientsTask.bacpl + "' won='" + ClientsTask.bacwn + "' lost='" + ClientsTask.bacls + "' nulle='" + ClientsTask.bacn + "'/>", true);
+                        ClientsTask.send("<inforequest score='" + ClientsTask.bacscore + "' rank='" + (ClientsTask.bacrk + ((ClientsTask.bacrk.equals("1")) ? "er" : "√®me")) + "' progression='" + XML.getAttribute("w") + "' played='" + ClientsTask.bacpl + "' won='" + ClientsTask.bacwn + "' lost='" + ClientsTask.bacls + "' nulle='" + ClientsTask.bacn + "'/>", true);
                         
                         _Serveur.Mysql_Query("INSERT INTO bac_games_confirm (id, score, dou) VALUES (" + ClientsTask.id + ", " + XML.getAttribute("w") + ", 'serv')");
                         ResultSet srv = _Serveur.MySQuery("SELECT COUNT(*) as nb FROM bac_games_confirm WHERE id = " + ClientsTask.id + " AND score = " + XML.getAttribute("w") + " AND dou = 'serv'");
@@ -2276,7 +2276,7 @@ public class Analyzer implements Runnable
                         ClientsTask.bacscore = "" + (Integer.parseInt(ClientsTask.bacscore) - Integer.parseInt(XML.getAttribute("l")));
                         ClientsTask.bacls = "" + (Integer.parseInt(ClientsTask.bacls) + 1);
                         
-                        ClientsTask.send("<inforequest score='" + ClientsTask.bacscore + "' rank='" + (ClientsTask.bacrk + ((ClientsTask.bacrk.equals("1")) ? "er" : "ème")) + "' progression='0' played='" + ClientsTask.bacpl + "' won='" + ClientsTask.bacwn + "' lost='" + ClientsTask.bacls + "' nulle='" + ClientsTask.bacn + "'/>", true);
+                        ClientsTask.send("<inforequest score='" + ClientsTask.bacscore + "' rank='" + (ClientsTask.bacrk + ((ClientsTask.bacrk.equals("1")) ? "er" : "√®me")) + "' progression='0' played='" + ClientsTask.bacpl + "' won='" + ClientsTask.bacwn + "' lost='" + ClientsTask.bacls + "' nulle='" + ClientsTask.bacn + "'/>", true);
                         
                         _Serveur.Mysql_Query("INSERT INTO bac_games_confirm (id, score, dou) VALUES (" + ClientsTask.id + ", " + XML.getAttribute("l") + ", 'serv')");
                         
@@ -2301,7 +2301,7 @@ public class Analyzer implements Runnable
                         ClientsTask.bacscore = "" + (Integer.parseInt(ClientsTask.bacscore) + Integer.parseInt(XML.getAttribute("n")));
                         ClientsTask.bacn = "" + (Integer.parseInt(ClientsTask.bacn) + 1);
                         
-                        ClientsTask.send("<inforequest score='" + ClientsTask.bacscore + "' rank='" + (ClientsTask.bacrk + ((ClientsTask.bacrk.equals("1")) ? "er" : "ème")) + "' progression='" + XML.getAttribute("n") + "' played='" + ClientsTask.bacpl + "' won='" + ClientsTask.bacwn + "' lost='" + ClientsTask.bacls + "' nulle='" + ClientsTask.bacn + "'/>", true);
+                        ClientsTask.send("<inforequest score='" + ClientsTask.bacscore + "' rank='" + (ClientsTask.bacrk + ((ClientsTask.bacrk.equals("1")) ? "er" : "√®me")) + "' progression='" + XML.getAttribute("n") + "' played='" + ClientsTask.bacpl + "' won='" + ClientsTask.bacwn + "' lost='" + ClientsTask.bacls + "' nulle='" + ClientsTask.bacn + "'/>", true);
                         
                         _Serveur.Mysql_Query("INSERT INTO bac_games_confirm (id, score, dou) VALUES (" + ClientsTask.id + ", 0, 'serv')");
                         
@@ -2324,8 +2324,8 @@ public class Analyzer implements Runnable
                 }
                 else
                 {
-                    ClientsTask.send("<inforequest score='0' rank='0ème' progression='0' played='0' lost='0' nulle='0'/>", true);
-                    ClientsTask.send("<grpadd n='Ta partie n'a pas été enregistrée ! Inscris-toi sur Chimboland pour profiter de toutes fonctionnalités !/>", true);
+                    ClientsTask.send("<inforequest score='0' rank='0√®me' progression='0' played='0' lost='0' nulle='0'/>", true);
+                    ClientsTask.send("<grpadd n='Ta partie n'a pas √©t√© enregistr√©e ! Inscris-toi sur Chimboland pour profiter de toutes fonctionnalit√©s !/>", true);
                 }
                 ClientsTask.setPartenaireBac(ChimbolandNIO.PLOT_NULL);
                 ClientsTask.setMapBac(ChimbolandNIO.PLOT_NULL);
@@ -3047,7 +3047,7 @@ public class Analyzer implements Runnable
                         else
                         {
                             ++ClientsTask.hypmoodfai;
-                            ClientsTask.send("<alert t='Du calme sur les Hypermoods ! (" + ClientsTask.hypmoodfai + ((ClientsTask.hypmoodfai == 1) ? "ère" : "ème") + " fois)'/>", true);
+                            ClientsTask.send("<alert t='Du calme sur les Hypermoods ! (" + ClientsTask.hypmoodfai + ((ClientsTask.hypmoodfai == 1) ? "√®re" : "√®me") + " fois)'/>", true);
                         }
                     }
                 }
